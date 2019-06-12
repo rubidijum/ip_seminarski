@@ -1,0 +1,145 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{nesreća u Francuskoj od 2005. do 2016. godine}
+\author{Jovan Ležaja \\ 
+	brindeksa \\
+	Matematički fakultet, Beograd \\
+	navoj96@gmail.com \\
+	\\
+	Aleksandar Vračarević \\
+	434/2016 \\
+	Matematički fakultet, Beograd \\
+	vracarevicaleksandar@gmail.com}
+
+\begin{document}
+
+\maketitle
+
+\section{Opis podataka}
+
+Podaci su preuzeti sa href{https://www.kaggle.com/ahmedlahlou/accidents-in-france-from-2005-to-2016} i predstavljaju podatke o saobraćajnim nesrećama u Francuskoj prikupljene u period od 2005. do 2016. godine. Kako bismo uopšte pristupili istraživanju skrivenih pravila u okviru ovog skupa, najpre se moramo upoznati sa istim. Naime, skup se sastoji od 5 tabela u \texttt{.csv} formatu. U nastavku ćemo opisati atribute svake od njih. \\
+
+
+
+\begin{itemize}
+ \item \texttt{caracteristics.csv}
+ \begin{itemize}
+  \item \textbf{Num\_Acc} : identifikator nesreće - numerički
+  \item \textbf{jour} : dan u mesecu - numerički [1-31]
+  \item \textbf{mois} : mesec - numerički [1-12]
+  \item \textbf{an} : poslednje dve cifre godine - numerički [5-16]
+  \item \textbf{hrmn} : vreme u formatu (ssmm) - numerički [1-2.36k]
+  \item \textbf{lum} : osvetljenje u trenutku nesreće brojevi [1-5] kodirani na sledeći način:
+			\begin{itemize}
+			 \item 1 - dan
+			 \item 2 - sumrak/zora
+			 \item 3 - noć bez prisutnog javnog osvetljenja
+			 \item 4 - noć sa isključenim javnim osvetljenjem
+			 \item 5 - noć sa uključenim javnim osvetljenjem
+			\end{itemize}
+  \item \textbf{dep} : INSEE kod odeljenja praćen nulom %TODO: opisati bolje
+  \item \textbf{com} : kod opštine izdat od strane INSEE
+  \item \textbf{agg} : \begin{itemize} %TODO: 
+                        \item 1 - izvan gradske sredine
+                        \item 2 - unutar gradske sredine
+                       \end{itemize}
+  \item \textbf{int} : tip raskrsnice [1-9] kodirani na sledeći način:
+			\begin{itemize}
+			 \item 1 - van raskrsnice
+			 \item 2 - X raskrsnica
+			 \item 3 - T raskrsnica
+			 \item 4 - Y raskrsnica
+			 \item 5 - raskrsnica sa više od 4 kraka
+			 \item 6 - kružni tok
+			 \item 7 - place %TODO: sta je ovo
+			 \item 8 - pružni prelaz
+			 \item 9 - ostalo
+			 
+			\end{itemize}
+
+  \item \textbf{atm} : atmosferski uslovi [1-9] kodirani na sledeći način:
+			\begin{itemize}
+			 \item 1 - normalni
+			 \item 2 - slaba kiša
+			 \item 3 - jaka kiša 
+			 \item 4 - sneg/gr\^ad
+			 \item 5 - magla/dim
+			 \item 6 - jak vetar/oluja
+			 \item 7 - zaslepljujuće vreme %TODO: š t a
+			 \item 8 - oblačno
+			 \item 9 - ostalo
+			\end{itemize}
+			
+  \item \textbf{col} : tip sudara [1-7] kodiran na sledeći način:
+			\begin{itemize}
+			 \item 1 - čeoni sudar
+			 \item 2 - sudar otpozadi
+			 \item 3 - sudar sa strane
+			 \item 4 - lančani sudar
+			 \item 5 - višestruki sudari (više vozila i više sudara)
+			 \item 6 - drugi sudari
+			 \item 7 - nesreća bez sudara
+			\end{itemize}
+  
+  \item \textbf{adr} : poštanska adresa - niska (popunjava se samo za gradske sredine)
+  \item \textbf{gps} : GPS kod - jedan karakter:
+			\begin{itemize}
+			 \item M - Métropole
+			 \item A - Antilles (Martinique or Guadeloupe)
+			 \item G = Guyane
+			 \item R = Réunion
+			 \item Y = Mayotte
+			\end{itemize}
+			
+  \item \textbf{lat} : geografska širina izražena u broju stepeni
+  \item \textbf{long} : geografska dužina izražena u broju stepeni
+
+
+
+ \end{itemize}
+
+ \item \texttt{holidays.csv}
+ \begin{itemize}
+  \item k
+ \end{itemize}
+ 
+ \item \texttt{places.csv}
+ \begin{itemize}
+  \item l
+ \end{itemize}
+ 
+ \item \texttt{users.csv}
+ \begin{itemize}
+  \item s
+ \end{itemize}
+ 
+ \item \texttt{vehicles.csv}
+ \begin{itemize}
+  \item \textbf{Num\_Acc} : identifikator nesreće - numerički
+  \item \textbf{Num\_veh} : identifikator vozila - alfanumerički kod
+  \item \textbf{GP} : %TODO: š t a
+  \item \textbf{CATV} : kategorija vozila [01 - 13]
+		      \begin{itemize}
+		       \item 01 - bicikl
+		       \item 02 - moped < 50 kubika
+		       \item 03 - kvadricikl sa motorom
+		       \item 04 - suvišno od 2006. (registrovani skuter)
+		       \item 05 - suvišno od 2006. (motocikl)
+		       \item 06 - suvišno od 2006. (putnička prikolica za motocikl)
+		       \item 07 - VL %TODO: tebra
+		       \item 08 - neupotrebljena kategorija (VL i karavan)
+		       \item 09 - neupotrebljena kategorija (VL i prikolica)
+		       \item 10 - VU %TODO: nmg
+		       \item 11 
+		       \item 12 
+		       \item 13 
+		      \end{itemize}
+
+ \end{itemize}
+ 
+\end{itemize}
+
+
+\end{document}
