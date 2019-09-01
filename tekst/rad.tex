@@ -1,10 +1,23 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{./images}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
 
 %opening
-\title{nesreća u Francuskoj od 2005. do 2016. godine}
+\title{Saobraćajne nesreće u Francuskoj od 2005. do 2016. godine}
 \author{Jovan Ležaja \\ 
-	brindeksa \\
+	473/2018 \\
 	Matematički fakultet, Beograd \\
 	navoj96@gmail.com \\
 	\\
@@ -17,9 +30,15 @@
 
 \maketitle
 
+\section{Uvod}
+Ovaj rad se fokusira na analizu skupa podataka o saobraćajnim nesrećama u Francuskoj od 2005. do 2006. godine. Pozabavićemo se opisom, 
+analizom i pretprocesiranjem datih podataka, a potom ćemo različitim algoritmima pokušati da pronadjemo pravila pridruživanja 
+(eng. \textit{Association rules}) koristeći se alatima koje nudi IBM SPSS Modeler.
+
 \section{Opis podataka}
 
-Podaci su preuzeti sa href{https://www.kaggle.com/ahmedlahlou/accidents-in-france-from-2005-to-2016} i predstavljaju podatke o saobraćajnim nesrećama u Francuskoj prikupljene u period od 2005. do 2016. godine. Kako bismo uopšte pristupili istraživanju skrivenih pravila u okviru ovog skupa, najpre se moramo upoznati sa istim. Naime, skup se sastoji od 5 tabela u \texttt{.csv} formatu. U nastavku ćemo opisati atribute svake od njih. \\
+Podaci su preuzeti sa \href{https://www.kaggle.com/ahmedlahlou/accidents-in-france-from-2005-to-2016}{https://www.kaggle.com/ahmedlahlou/accidents-in-france-from-2005-to-2016}
+i predstavljaju podatke o saobraćajnim nesrećama u Francuskoj prikupljene u period od 2005. do 2016. godine. Kako bismo uopšte pristupili istraživanju skrivenih pravila u okviru ovog skupa, najpre se moramo upoznati sa istim. Naime, skup se sastoji od 5 tabela u \texttt{.csv} formatu. U nastavku ćemo opisati atribute svake od njih. \\
 
 
 
@@ -102,17 +121,180 @@ Podaci su preuzeti sa href{https://www.kaggle.com/ahmedlahlou/accidents-in-franc
 
  \item \texttt{holidays.csv}
  \begin{itemize}
-  \item k
+  \item \textbf{ds} : datum nesreće u formatu godina-mesec-dan
+  \item \textbf{holiday} : naziv praznika
  \end{itemize}
  
  \item \texttt{places.csv}
  \begin{itemize}
-  \item l
+  \item \textbf{Num\_Acc} : identifikator nesreće - numerički
+  \item \textbf{catr} : kategorija puta [1-9] kodirani na sledeći način:
+	\begin{itemize}
+	 \item 1 - autoput
+	 \item 2 - državni put
+	 \item 3 - departmentalni putevi
+	 \item 4 - komunalni putevi
+	 \item 5 - mreža puteva zabranjena za javnost
+	 \item 6 - javni parking
+	 \item 9 - ostalo
+	\end{itemize}
+  \item \textbf{voie} : broj puta - numerički
+  \item \textbf{V1} : numerički indeks broja puta (na primer: 2 bis, 3 ter itd.)
+  \item \textbf{V2} : alfanumerički indeks puta
+  \item \textbf{circ} : tip saobraćanja [1-4] kodiran na sledeći način:
+	\begin{itemize}
+	 \item 1 - jednosmerna ulica
+	 \item 2 - dvosmerna ulica
+	 \item 3 - razdvojen kolovoz
+	 \item 4 - 
+	\end{itemize}
+  \item \textbf{nbv} : ukupan broj traka na putu - numerički
+  \item \textbf{vosp} : indikator postojanja rezervisane trake [1-3], 
+			nezavisno od toga da li se nesreća dogodila u toj traci, kodiran na sledeći način:
+	\begin{itemize}
+	 \item 1 - bickilistička traka
+	 \item 2 - parking za bicikle
+	 \item 3 - rezervisan kanal
+	\end{itemize}
+  \item \textbf{prof} : kategorije puta [1-4] zavisno od nagiba puta, kodirane na sledeći:
+	\begin{itemize}
+	 \item 1 - ``dish''
+	 \item 2 - nizbrdica
+	 \item 3 - vrh brda
+	 \item 4 - dno brda
+	\end{itemize}
+  \item \textbf{pr} : PR broj kuće - numerička vrednost
+  \item \textbf{pr1} : udaljenost od najbližeg PR broja izražena u metrima - numerička vrednost
+  \item \textbf{plan} : izgled puta na mapi [1-4], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - prav put
+	 \item 2 - zakrivljen ulevo
+	 \item 3 - zakrivljen udesno
+	 \item 4 - ``S'' oblika
+	\end{itemize}
+  \item \textbf{lartpc} : širina ostrva na ulici, ako postoji - niska
+  \item \textbf{larrout} : širina puta namenjena za saobraćaj - niska
+  \item \textbf{surf} : stanje terena [1-9], kodiran na sledeći način:
+	\begin{itemize}
+	 \item 1 - normalan
+	 \item 2 - vlažan
+	 \item 3 - teren
+	 \item 4 - potopljen
+	 \item 5 - sneg na terenu
+	 \item 6 - blatnjav
+	 \item 7 - poledica na terenu
+	 \item 8 - masan/zauljen teren
+	 \item 9 - ostalo
+	\end{itemize}
+  \item \textbf{infra} : infrastruktura puteva [1-7], kodirana na sledeći način:
+	\begin{itemize}
+	 \item 1 - podzemni tunel
+	 \item 2 - most/nadvožnjak
+	 \item 3 - uključenje
+	 \item 4 - pruga
+	 \item 5 - ``carrefour arranged''
+	 \item 6 - pešačka zona
+	 \item 7 - ostalo
+	\end{itemize}
+  \item \textbf{situ} : pozicija nesreće [1-5], kodirana na sledeći način:
+	\begin{itemize}
+	 \item 1 - na putu
+	 \item 2 - u zaustavnoj traci
+	 \item 3 - na ivičnjaku
+	 \item 4 - na trotoaru
+	 \item 5 - na biciklističkoj stazi
+	\end{itemize}
+  \item \textbf{env1} : locirano blizu škole - numerička vrednost
  \end{itemize}
- 
+
  \item \texttt{users.csv}
  \begin{itemize}
-  \item s
+  \item \textbf{Acc\_number} : identifikator nesreće - numerički
+  \item \textbf{Num\_Veh} : identifikator vozila - alfanumerički
+  \item \textbf{place} : pozicija osobe u vozilu u vreme nesreće, kodirano u skladu sa sledećom slikom:
+  
+\begin{minipage}{0.7\textwidth}
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=\textwidth]{./images/ip_sem_img_4.png}}
+\end{minipage}
+  
+  \item \textbf{catu} : uloga osobe u saobraćaju u trenutku nesreće [1-4], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - vozač
+	 \item 2 - putnik
+	 \item 3 - pešak
+	 \item 4 - pešak na rolerima ili skuteru
+	\end{itemize}
+  \item \textbf{grav} : ozbiljnost povrede [1-4], kodirana na sledeći način:
+	\begin{itemize}
+	 \item 1 - neozledjen
+	 \item 2 - ubijen
+	 \item 3 - hospitalizovan
+	 \item 4 - blaga ozleda
+	\end{itemize}
+  \item \textbf{sex} : pol osobe:
+	\begin{itemize}
+	 \item 1 - muško
+	 \item 2 - žensko
+	\end{itemize}
+  \item \textbf{Year\_on} : godina rodjenja - numerički
+  \item \textbf{trip} : razlog putovanja [1-9], kodiran na sledeći način:
+	\begin{itemize}
+	 \item 1 - kuća-posao
+	 \item 2 - posao-kuća
+	 \item 3 - kupovina
+	 \item 4 - poslovni put
+	 \item 5 - razonoda
+	 \item 9 - ostalo
+	\end{itemize}
+  \item \textbf{secu} : niska koja se sastoji od 2 broja. 
+			Prvi označava postojanje sigurnosne opreme [1-9], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - pojas za vezivanje
+	 \item 2 - kaciga
+	 \item 3 - sedeljka za decu
+	 \item 4 - reflektujuća oprema
+	 \item 9 - ostalo
+	\end{itemize}
+	
+	Drugi označava korišćenje sigurnosne opreme [1-3], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - oprema je korišćena
+	 \item 2 - oprema nije korišćena
+	 \item 3 - neodredjeno
+	\end{itemize}
+
+  \item \textbf{locp} : pozicija pešaka [1-8], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - više od 50 metara od pešačkog prelaza
+	 \item 2 - manje od 50 metara od pešačkog prelaza
+	 \item 3 - na pešačkom prelazu sa semaforom
+	 \item 4 - na pešačkom prelazu bez semafora
+	 \item 5 - na trotoaru
+	 \item 6 - na ivičnjaku
+	 \item 7 - pod zaklonom
+	 \item 8 - u prolazu
+	\end{itemize}
+
+  \item \textbf{actp} : akcija pešaka [0-9], kodirano na sledeći način:
+	\begin{itemize}
+	 \item 0 - neodredjeno
+	 \item 1 - kreće se u istom smeru kao i vozilo sa kojim se dogodio sudar
+	 \item 2 - kreće se u suprotnom smeru kao i vozilo sa kojim se dogodio sudar
+	 \item 3 - prelazak ulice
+	 \item 4 - zaklonjen
+	 \item 5 - u trku
+	 \item 6 - sa životinjom
+	 \item 9 - ostalo
+	\end{itemize}
+
+  \item \textbf{etatp} : kategorička vrednost koja odredjuje da li je pešak bio u društvu drugih ljudi ili ne, kodirano na sledeći način:
+	\begin{itemize}
+	 \item 1 - sam
+	 \item 2 - sa saputnikom
+	 \item 3 - u grupi ljudi
+	\end{itemize}
+
  \end{itemize}
  
  \item \texttt{vehicles.csv}
@@ -132,14 +314,88 @@ Podaci su preuzeti sa href{https://www.kaggle.com/ahmedlahlou/accidents-in-franc
 		       \item 08 - neupotrebljena kategorija (VL i karavan)
 		       \item 09 - neupotrebljena kategorija (VL i prikolica)
 		       \item 10 - VU %TODO: nmg
-		       \item 11 
-		       \item 12 
-		       \item 13 
+		       \item 11 - najviše korišćeno posle 2006. godine (VU(10) + karavan)
+		       \item 12 - najviše korišćeno posle 2006. godine (VU(10) + prikolica)
+		       \item 13 - PL samo 3.5T
+		       \item 14 - 
 		      \end{itemize}
 
  \end{itemize}
  
 \end{itemize}
+
+\section{Analiza i pretprocesiranje podataka}
+Prilikom učitavanja tabele \textit{characteristics} smo uočili da je usled loše formatirane datoteke došlo do pogrešne reprezentacije podataka, što smo razrešili jednostavnom \textit{Python} skriptom.
+Analizirajući tabelu \texttt{characteristics} uočili smo da atributi \textit{gps}, \textit{lat} i \textit{long} imaju značajan broj 
+nedostajućih vrednosti (preko 50\%), a s obzirom da zamena nekom konkretnom vrednošću nema smisla zato što nemamo dovoljno validnih vrednosti u koloni da njihova zamena bude smislena,
+odlučili smo da ih uklonimo, jer smatramo da nam nisu bitni za dalju analizu. Kada je reč o atributima \textit{atm} i \textit{col}, 
+zbog izuzetno malog broja nedostajućih vrednosti (atributi su bili kompletni blizu 100\%), u čvoru \textit{Type} smo ih odbacili, 
+jer ne gubimo ništa odbacivanjem tako malog broja podataka. U tabeli se isto tako nalaze i atributi vezani za lokaciju nesreća (ulica, opština, itd.),
+ali dodatnim posmatranjem smo primetili da je format zapisa tih podataka dosta nekonzistentan, tako da je njihova korisnost dovedena u pitanje,
+pošto bez iscrpnog analiziranja teksta ne bismo mogli da izvučemo korisne informacije, što je dovelo do odluke da preko čvora \textit{Type} 
+tim atributima postavimo ulogu (``Role'') na vrednost \texttt{None}.
+
+\begin{figure}[h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.4\textwidth,height=0.3\textheight]{./images/ip_sem_img_1.png}}
+ \caption{Sadržaj \textit{Data Audit} čvora za tabelu \texttt{characteristics}}
+\end{figure}
+
+\begin{figure}[h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=0.55\textwidth]{./images/ip_sem_img_2.png}}
+ \caption{Sadržaj \textit{Filter} čvora za tabelu \texttt{characteristics}}
+\end{figure}
+
+\begin{figure}[h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.5\textheight]{./images/ip_sem_img_3.png}}
+ \caption{Sadržaj \textit{Type} čvora za tabelu \texttt{characteristics}}
+\end{figure}
+
+Analizom skupa podataka \texttt{users} uočili smo da atributi \textit{locp}, \textit{actp} i \textit{etatp}, koji predstavljaju informacije vezane
+za pešaka, imaju značajan broj neodredjenih vrednosti (preko 50\%), tako da smo te kolone izbacili iz skupa podataka \textit{users}. Kada je u pitanju
+atribut \textit{secu}, čije su vrednosti predstavljene kao dva broja, uočili smo nekonzistentnost odredjenih polja sa zadatim opisom reprezentacije tog atributa,
+tako da smo te nekonzistentne vrednosti preimenovali u \texttt{NA} (neodredjenu vrednost). Za svaki atribut koji je imao 0 kao vrednost, a nije bilo definisano
+šta ta vrednost predstavlja, 0 je zamenjena sa \texttt{NA}. Za atribut \textit{place} smo sve vrednosti ostavili kakve jesu, pošto je šema 
+koja predstavlja kodiranje bila nedovoljno jasna.
+
+Skup podataka \texttt{vehicles} smo analizirali i zaključili da sve nedostajuće i neodredjene vrednosti možemo da odbacimo. Nismo naišli ni na kakve
+nepravilnosti koje iziskuju podrobnije procesiranje.
+
+Skup podataka \texttt{places}
+
+Skup podataka \texttt{holidays} smo odlučili da ne koristimo za dalju analizu, jer ne sadrži preterano korisne informacije.
+
+\section{Pravila pridruživanja}
+Nakon što smo obradili skupove podataka, hteli smo da na svaki od relevantnih skupova primenimo algoritme \textit{Apriori} i \textit{Carma},
+u nadi da ćemo uočiti neka zanimljiva pravila. Nakon primene pomenutih algoritama, cilj nam je bio da primenimo iste algoritme nad objedinjenim podacima.
+
+\subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{characteristics}}
+Iskoristili smo niz čvorova \textit{Reclassify} kako bismo lakše tumačili kategoričke vrednosti. Iz tog skupa smo filtrirali one slogove čija je 
+vrednost atributa \textit{tip\_raskrsnice} \texttt{NA}. Potom smo primenili \textit{Apriori} sa podrazumevanim podešavanjima 
+(minimalna podrška uzročnika je 10\%, a minimalna pouzdanost pravila je 80\%) i rezultati izvršavanja
+tog algoritma se mogu videti na slici. Posledice pravila se odnose na atmosferske prilike, tip raskrsnice i indikator da li se nesreća desila u gradu ili ne.
+Algoritam je uspeo da nadje 30 pravila, koja sve u svemu nisu zanimljiva. Naime, lift mera se kreće u opsegu od 0.998 do 1.314, što nam govori da su
+uzročnici u blagoj korelaciji sa posledicama. Kako bismo pripremili skup podataka za algoritam \textit{Carma}, koristili smo čvor \textit{SetToFlag}. 
+\textit{Carma} algoritam smo primenili sa istim parametrima kao i \textit{Apriori}. Dobili smo 22 pravila, koja su gotovo identična onima koje smo
+dobili korišćenjem \textit{Apriori} algoritma. 
+% TODO: slika Apriori(5) i Carma(6)
+ 
+Kao što se iz rezultata \textit{Data Audit} čvora može primetiti, odredjene vrednosti nekh atributa dominiraju nad ostalim vrednostima, te stoga ne
+čudi što otkrivena pravila sadrže te vrednosti. U želji da izbor pravila bude pravedniji, odlučili smo da izbalansiramo skup podataka, tako što 
+ćemo korišćenjem čvorova \textit{Balance} na pojedinačne kolone ublažiti efekat dominantnih vrednosti. Nakon toga smo redom primenjivali \textit{Apriori}
+algoritam za svaku izmenjenu kolonu. Potom smo eksperimentisali sa primenom \textit{Apriori} alogritma na ulančane \textit{Balance} čvorove i na 
+čvorove primenjene na pojedinačne kolone. Neki od rezultata su predstavljeni na narednim slikama.
+%TODO: slika 7+
+
+Kako pokušaj sa balansiranjem nije prošao slavno, odlučili smo se da potpuno eliminišemo slogove koji imaju najzastupljeniju vrednost odredjenog atributa,
+i da na njega primenimo iste algoritme. Na ovaj način smo otkrili više pravila nego u prethodnim pokušajima, sa interesantnijim lift merama 
+u opsegu od 0.673 do 1.421, ali sa malom pouzdanošću i podrškom. Neki rezultati mogu da se vide na sledećim slikama.
+%TODO: slike!
+
+%TODO: 	broj putnika: nesto slogirano, brisemo
+% 	
 
 
 \end{document}
