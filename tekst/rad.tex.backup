@@ -389,6 +389,18 @@ uzročnici u blagoj korelaciji sa posledicama. Kako bismo pripremili skup podata
 dobili korišćenjem \textit{Apriori} algoritma. \\
 % TODO: slika Apriori(5) i Carma(6)
  
+ \begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.3\textheight]{./images/5_rezultati_apriori.PNG}}
+ \caption{Apriori}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.3\textheight]{./images/6_rezultati_carma.PNG}}
+ \caption{Carma}
+\end{figure}
+ 
 Kao što se iz rezultata \textit{Data Audit} čvora može primetiti, odredjene vrednosti nekh atributa dominiraju nad ostalim vrednostima, te stoga ne
 čudi što otkrivena pravila sadrže te vrednosti. 
 %TODO: slika 7+
@@ -474,16 +486,104 @@ podrazumevane parametre za oba čvora. Rezultati su u nastavku.
 
 \begin{figure}[h!]
  \centering
- \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/default_apriori.PNG}}
- \caption{Rezultati apriori algoritma sa podrazumevanim parametrima.}
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.3\textheight]{./images/default_apriori.PNG}}
+ \caption{Rezultati apriori algoritma sa podrazumevanim parametrima nad objedinjenim skupom.}
 \end{figure}
 
 \begin{figure}[h!]
  \centering
- \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/default_carma.PNG}}
- \caption{Rezultati carma algoritma sa podrazumevanim parametrima.}
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.3\textheight]{./images/default_carma.PNG}}
+ \caption{Rezultati carma algoritma sa podrazumevanim parametrima nad objedinjenim skupom.}
 \end{figure}
 
+\clearpage
 
+Primećujemo da su prisutna pravila sa solidnom lift merom od oko 1.5 i velikom podrškom za oba algoritma. Odmah se Primećuje
+i ogromna razlika u količini pronadjenih pravila. Većina pravila pronadjenih aprior algoritmom kao posledicu imaju nošenje
+zaštitnog pojasa u trenutku nesreće. Kod carma algoritma pravila su malo raznolikija ali i dalje se u pravilima javljaju 
+većinski dominantne vrednosti odgovarajućih kolona. U nastavku ćemo pokušati da ispitamo vezu izmedju nekih atributa za koje
+mislimo da mogu proizvesti interesantna pravila. \\
+
+Najpre smo hteli da ispitamo postoje li veze izmedju atmosferskih prilika, vrste sudara, kategorija učesnika, ozbiljnosti povreda
+i korišćene zaštitne opreme. Kroz više iteracija smo se zaustavili na minimalnoj podršci od 5.0\% i minimalnoj pouzdanosti od 60.0\%.
+Pravila dobijena apriorijem kojima je lift mera najveća uglavnom za posledicu imaju nošenje zaštitnog pojasa, pa nam ovo nije 
+preterano zanimljivo. 
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/jovanov_izbor_apriori.PNG}}
+ \caption{Rezultati apriori algoritma primenjenog na atmosferske prilike, vrstu sudara, kategoriju učesnika, ozbiljnost povreda
+i korišćenu zaštitnu opremu. }
+\end{figure}
+
+Carma algoritam je dao malo zanimljivije rezultate. Naime, pronadjena su tri pravila koja lift merom odstupaju od jedinice. Pravilo
+\textit{žensko + korišćen je zaštitni pojas} ima lift meru od 1.128 što nam govori da postoji blaga pozitivna korelacija
+izmedju ženskog pola i vezivanja zaštitnog pojasa. S druge strane, na osnovu lift mere manje od 1, dolazimo do zaključka
+da ukoliko je došlo do blage ozlede, možemo spekulisati da se ne radi o vozaču. Slično tome, ukoliko je učesnik nezgode 
+žensko, manja je šansa da je vozač nego neka druga kategorija učesnika. Za ovaj čvor smo koristili minimalnu podršku od 20.0\% i
+minimalnu pouzdanost od 60.0\%. \\
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.15\textheight]{./images/jovanov_izbor_carma.PNG}}
+ \caption{Rezultati carma algoritma primenjenog na atmosferske prilike, vrstu sudara, kategoriju učesnika, ozbiljnost povreda
+i korišćenu zaštitnu opremu. }
+\end{figure} 
+
+Sledeći pokušaj se odnosio na uticaj zaštitne opreme i vrste sudara na ozbiljnost povreda. Carma čvor je ostavljen sa 
+podrazumevanim vrednostima (po 20.0\% za oba parametra). Čvoru apriori smo iterativno smanjivali parametre, ali ni za minimalnu
+podršku od 5.0\% i minimalnu pouzdanost od 5.0\% nije uspeo da pronadje nijedno pravilo.
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.15\textheight]{./images/izbor2_carma.PNG}}
+ \caption{Rezultati carma algoritma primenjenog na vrstu sudara, zaštitu i ozbiljnost povrede. Jedini zaključak koji
+ možemo izvesti je da korišćenje zaštitnog pojasa pozitivno korelira sa odsustvom ozlede. Podrška i lift mera ostala dva pravila
+ nam govori da ta pravila nisu dovoljno interesantna. }
+\end{figure}
+
+Nakon toga smo se pitali da li kategorija učesnika ima veze sa korišćenom zaštitnom opremom. 
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.15\textheight]{./images/izbor3_apriori.PNG}}
+ \caption{Rezultati apriori algoritma primenjenog na kategoriju učesnika i korišćenu zaštitnu opremu. Iz sličnog razloga kao i za 
+ apriori odbacujemo ova pravila kao nekorisna. }
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.15\textheight]{./images/izbor3_carma.PNG}}
+ \caption{Rezultati carma algoritma primenjenog na kategoriju učesnika i korišćenu zaštitnu opremu. Lift mera je veoma bliska 
+ jedinici te ne smatramo pravila interesantnim. }
+\end{figure}
+
+Pitali smo se da li godine učesnika imaju veze sa korišćenjem zaštitne opreme. Najpre smo godine, koje su se nalazile u intervalu
+1896 do 2016, ograničili na interval od 1920 do 2006 i podelili ih u 4 kategorije korišćenjem \textit{binning} čvora. Nakon nekoliko
+pokretanja apriori čvora, došli smo do sledećih podešavanja: minimalna podrška od 5.0\%, minimalna pouzdanost 20.0\%.
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.15\textheight]{./images/izbor4_apriori.PNG}}
+ \caption{Rezultati apriori algoritma primenjenog na kategoriju starosti učesnika i korišćenu zaštitnu opremu. Dolazimo do 
+ zaključka da učesnici mladji od 21 godine koriste kacigu kao i da ne nose pojas (doduše oba ova pravila imaju malu pouzdanost). }
+\end{figure}
+
+Algoritam carma sa minimalnom podrškom od 20.0\% i minimalnom pouzdanošću 20.0\% nije pronašao zanimljiva pravila (lift mera je veoma
+bliska jedinici).
+
+Poslednji pokušaj ticao se traženja povezanosti izmedju ozbiljnosti povrede, izgleda puta na mapi, pozicije nesreće i zaštitne opreme. 
+Apriori algoritam je korišćen sa parametrima 5.0\% i 40.0\% za minimalnu podršku i minimalnu pouzdanost, redom. Carma čvor smo koristili
+sa podrazumevanim parametrima. 
+
+\section{Zaključak}
+
+Pravila pridruživanja predstavljaju moćan alat za uočavanje nekih krajnje 
+neočekivanih zavisnosti medju podacima. Medjutim, iako su algoritmi za 
+nalaženje pravila jednostavni za implementaciju, rezultati dosta zavise i od samih 
+podataka. Naime, u poslednje vreme se javljaju radovi koji predlažu naprednije 
+tehnike pretprocesiranja kao preduslov za izvlačenje boljih pravila.
+U našem slučaju, skup podataka je bio dosta neuravnotežen i smatramo to jednim od 
+važnijih faktora za donekle neuspelo pronalaženje interesantnijih pravila.
 
 \end{document}
