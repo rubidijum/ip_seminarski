@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.4.1)  2 SEP 2019 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.4.1)  2 SEP 2019 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,7 +598,7 @@ File: ./images/ip_sem_img_1.png Graphic file (type png)
 
 <use ./images/ip_sem_img_1.png>
 Package pdftex.def Info: ./images/ip_sem_img_1.png used on input line 340.
-(pdftex.def)             Requested size: 482.99617pt x 149.4987pt.
+(pdftex.def)             Requested size: 344.99405pt x 149.4987pt.
 
 <./images/ip_sem_img_2.png, id=75, 534.99875pt x 481.8pt>
 File: ./images/ip_sem_img_2.png Graphic file (type png)
@@ -615,7 +615,7 @@ File: ./images/ip_sem_img_3.png Graphic file (type png)
 
 <use ./images/ip_sem_img_3.png>
 Package pdftex.def Info: ./images/ip_sem_img_3.png used on input line 352.
-(pdftex.def)             Requested size: 448.49951pt x 299.01332pt.
+(pdftex.def)             Requested size: 344.99962pt x 299.01332pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -642,7 +642,10 @@ File: ./images/5_rezultati_apriori.PNG Graphic file (type png)
 <use ./images/5_rezultati_apriori.PNG>
 Package pdftex.def Info: ./images/5_rezultati_apriori.PNG used on input line 39
 4.
-(pdftex.def)             Requested size: 345.00417pt x 179.39812pt.
+(pdftex.def)             Requested size: 345.00417pt x 269.09718pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <./images/6_rezultati_carma.PNG, id=93, 655.69969pt x 593.21625pt>
 File: ./images/6_rezultati_carma.PNG Graphic file (type png)
@@ -650,13 +653,12 @@ File: ./images/6_rezultati_carma.PNG Graphic file (type png)
 <use ./images/6_rezultati_carma.PNG>
 Package pdftex.def Info: ./images/6_rezultati_carma.PNG used on input line 400.
 
-(pdftex.def)             Requested size: 344.99788pt x 179.39642pt.
+(pdftex.def)             Requested size: 344.99788pt x 269.1082pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9 <./images/5_rezultati_apriori.PNG>]
-<./images/stream1_data_audit_hist.PNG, id=102, 700.86844pt x 391.4625pt>
+<./images/stream1_data_audit_hist.PNG, id=94, 700.86844pt x 391.4625pt>
 File: ./images/stream1_data_audit_hist.PNG Graphic file (type png)
 
 <use ./images/stream1_data_audit_hist.PNG>
@@ -664,36 +666,47 @@ Package pdftex.def Info: ./images/stream1_data_audit_hist.PNG used on input lin
 e 411.
 (pdftex.def)             Requested size: 345.00061pt x 179.39995pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 Overfull \hbox (4.69514pt too wide) in paragraph at lines 417--422
 \OT1/cmr/m/n/10 ubla^^Tziti efekat dom-i-nant-nih vred-nosti (pomenute ^^Tcvoro
 ve smo gener-isali uz pomo^^Sc
  []
 
 
-<./images/stream1_apriori_bal_osvetljenje.PNG, id=103, 522.45187pt x 121.95563p
-t>
+<./images/stream1_apriori_bal_osvetljenje.PNG, id=95, 522.45187pt x 121.95563pt
+>
 File: ./images/stream1_apriori_bal_osvetljenje.PNG Graphic file (type png)
  <use ./images/stream1_apriori_bal_osvetljenje.PNG>
 Package pdftex.def Info: ./images/stream1_apriori_bal_osvetljenje.PNG used on i
 nput line 425.
-(pdftex.def)             Requested size: 448.51062pt x 119.59941pt.
- [10 <./images/6_rezultati_carma.PNG> <./images/stream1_data_audit_hist.PNG>]
-<./images/stream1_apriori_red_sudar.PNG, id=112, 704.6325pt x 513.41812pt>
+(pdftex.def)             Requested size: 345.00266pt x 119.59941pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./images/stream1_apriori_red_sudar.PNG, id=96, 704.6325pt x 513.41812pt>
 File: ./images/stream1_apriori_red_sudar.PNG Graphic file (type png)
 
 <use ./images/stream1_apriori_red_sudar.PNG>
 Package pdftex.def Info: ./images/stream1_apriori_red_sudar.PNG used on input l
 ine 432.
-(pdftex.def)             Requested size: 448.50111pt x 239.19916pt.
+(pdftex.def)             Requested size: 344.99341pt x 239.19916pt.
 
 Underfull \hbox (badness 3407) in paragraph at lines 434--434
 []\OT1/cmr/m/n/10 Figure 8: []Rezultat primene apri-ori al-go-ritma na bal-an-s
 ir-anu kolonu
  []
 
-[11 <./images/stream1_apriori_bal_osvetljenje.PNG> <./images/stream1_apriori_re
-d_sudar.PNG>]
-<./images/stream1_apriori_bal_osvetljenje_SEQ.PNG, id=121, 544.28343pt x 109.15
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9] [10 <./images/5_rezultati_apriori.PNG> <./images/6_rezultati_carma.PNG>]
+[11 <./images/stream1_data_audit_hist.PNG> <./images/stream1_apriori_bal_osvetl
+jenje.PNG>] [12 <./images/stream1_apriori_red_sudar.PNG>]
+<./images/stream1_apriori_bal_osvetljenje_SEQ.PNG, id=125, 544.28343pt x 109.15
 78pt>
 File: ./images/stream1_apriori_bal_osvetljenje_SEQ.PNG Graphic file (type png)
  <use ./images/stream1_apriori_bal_osvetljenje_SEQ.PNG>
@@ -701,7 +714,7 @@ Package pdftex.def Info: ./images/stream1_apriori_bal_osvetljenje_SEQ.PNG used
 on input line 442.
 (pdftex.def)             Requested size: 344.99326pt x 59.80379pt.
 
-<./images/stream1_apriori_reduce_atm_SEQ.PNG, id=122, 500.62032pt x 92.59593pt>
+<./images/stream1_apriori_reduce_atm_SEQ.PNG, id=126, 500.62032pt x 92.59593pt>
 File: ./images/stream1_apriori_reduce_atm_SEQ.PNG Graphic file (type png)
 <use ./images/stream1_apriori_reduce_atm_SEQ.PNG>
 Package pdftex.def Info: ./images/stream1_apriori_reduce_atm_SEQ.PNG used on in
@@ -720,32 +733,32 @@ Overfull \hbox (11.69522pt too wide) in paragraph at lines 456--459
  []
 
 
-<./images/stream1_apriori_vrsta_sudara.PNG, id=123, 599.99156pt x 404.26031pt>
+<./images/stream1_apriori_vrsta_sudara.PNG, id=127, 599.99156pt x 404.26031pt>
 File: ./images/stream1_apriori_vrsta_sudara.PNG Graphic file (type png)
 
 <use ./images/stream1_apriori_vrsta_sudara.PNG>
 Package pdftex.def Info: ./images/stream1_apriori_vrsta_sudara.PNG used on inpu
 t line 462.
-(pdftex.def)             Requested size: 379.50728pt x 179.40488pt.
- [12
+(pdftex.def)             Requested size: 345.01077pt x 179.40488pt.
+ [13
 
  <./images/stream1_apriori_bal_osvetljenje_SEQ.PNG> <./images/stream1_apriori_r
 educe_atm_SEQ.PNG> <./images/stream1_apriori_vrsta_sudara.PNG>]
-<./images/stream1_model.PNG, id=134, 1032.85875pt x 478.78876pt>
+<./images/stream1_model.PNG, id=139, 1032.85875pt x 478.78876pt>
 File: ./images/stream1_model.PNG Graphic file (type png)
 
 <use ./images/stream1_model.PNG>
 Package pdftex.def Info: ./images/stream1_model.PNG used on input line 471.
-(pdftex.def)             Requested size: 448.50192pt x 239.19653pt.
+(pdftex.def)             Requested size: 344.98935pt x 239.19653pt.
 
-<./images/places_type_cvor.PNG, id=135, 423.83344pt x 188.20313pt>
+<./images/places_type_cvor.PNG, id=140, 423.83344pt x 188.20313pt>
 File: ./images/places_type_cvor.PNG Graphic file (type png)
 
 <use ./images/places_type_cvor.PNG>
 Package pdftex.def Info: ./images/places_type_cvor.PNG used on input line 487.
 (pdftex.def)             Requested size: 345.01051pt x 119.60242pt.
 
-<./images/places_carma.PNG, id=136, 523.20468pt x 440.39531pt>
+<./images/places_carma.PNG, id=141, 523.20468pt x 440.39531pt>
 File: ./images/places_carma.PNG Graphic file (type png)
 
 <use ./images/places_carma.PNG>
@@ -763,10 +776,10 @@ i-cles \OT1/cmr/m/n/10 i \OT1/cmr/m/it/10 car-ac-ter-is-tics \OT1/cmr/m/n/10 iz
 bacuju^^Sci
  []
 
-[13
+[14
 
  <./images/stream1_model.PNG> <./images/places_type_cvor.PNG>]
-<./images/default_apriori.PNG, id=146, 423.08063pt x 459.21562pt>
+<./images/default_apriori.PNG, id=150, 423.08063pt x 459.21562pt>
 File: ./images/default_apriori.PNG Graphic file (type png)
 
 <use ./images/default_apriori.PNG>
@@ -776,7 +789,7 @@ Package pdftex.def Info: ./images/default_apriori.PNG used on input line 506.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/default_carma.PNG, id=147, 504.38437pt x 465.23813pt>
+<./images/default_carma.PNG, id=151, 504.38437pt x 465.23813pt>
 File: ./images/default_carma.PNG Graphic file (type png)
 
 <use ./images/default_carma.PNG>
@@ -786,7 +799,7 @@ Package pdftex.def Info: ./images/default_carma.PNG used on input line 512.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14 <./images/places_carma.PNG>] [15 <./images/default_apriori.PNG> <./images/d
+[15 <./images/places_carma.PNG>] [16 <./images/default_apriori.PNG> <./images/d
 efault_carma.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 518--523
 
@@ -798,19 +811,19 @@ Overfull \hbox (0.9451pt too wide) in paragraph at lines 524--528
  kori^^Ts^^Scene za^^Tstitne opreme.
  []
 
-<./images/jovanov_izbor_apriori.PNG, id=162, 605.26125pt x 469.00218pt>
+<./images/jovanov_izbor_apriori.PNG, id=166, 605.26125pt x 469.00218pt>
 File: ./images/jovanov_izbor_apriori.PNG Graphic file (type png)
 
 <use ./images/jovanov_izbor_apriori.PNG>
 Package pdftex.def Info: ./images/jovanov_izbor_apriori.PNG used on input line 
 531.
-(pdftex.def)             Requested size: 448.50508pt x 239.1951pt.
+(pdftex.def)             Requested size: 345.00249pt x 239.1951pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 536--542
 
  []
 
-<./images/jovanov_izbor_carma.PNG, id=163, 471.26062pt x 168.63pt>
+<./images/jovanov_izbor_carma.PNG, id=167, 471.26062pt x 168.63pt>
 File: ./images/jovanov_izbor_carma.PNG Graphic file (type png)
 
 <use ./images/jovanov_izbor_carma.PNG>
@@ -821,24 +834,24 @@ Package pdftex.def Info: ./images/jovanov_izbor_carma.PNG used on input line 54
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16
+[17
 
  <./images/jovanov_izbor_apriori.PNG>]
-<./images/izbor2_carma.PNG, id=170, 484.05844pt x 160.34906pt>
+<./images/izbor2_carma.PNG, id=174, 484.05844pt x 160.34906pt>
 File: ./images/izbor2_carma.PNG Graphic file (type png)
 
 <use ./images/izbor2_carma.PNG>
 Package pdftex.def Info: ./images/izbor2_carma.PNG used on input line 556.
 (pdftex.def)             Requested size: 345.0134pt x 89.69698pt.
 
-<./images/izbor3_apriori.PNG, id=171, 472.76625pt x 120.45pt>
+<./images/izbor3_apriori.PNG, id=175, 472.76625pt x 120.45pt>
 File: ./images/izbor3_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor3_apriori.PNG>
 Package pdftex.def Info: ./images/izbor3_apriori.PNG used on input line 566.
 (pdftex.def)             Requested size: 345.00829pt x 89.69951pt.
 
-<./images/izbor3_carma.PNG, id=172, 449.42906pt x 146.79843pt>
+<./images/izbor3_carma.PNG, id=176, 449.42906pt x 146.79843pt>
 File: ./images/izbor3_carma.PNG Graphic file (type png)
 
 <use ./images/izbor3_carma.PNG>
@@ -848,36 +861,36 @@ Package pdftex.def Info: ./images/izbor3_carma.PNG used on input line 573.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17 <./images/jovanov_izbor_carma.PNG> <./images/izbor2_carma.PNG> <./images/iz
+[18 <./images/jovanov_izbor_carma.PNG> <./images/izbor2_carma.PNG> <./images/iz
 bor3_apriori.PNG>]
-<./images/izbor4_apriori.PNG, id=183, 563.10374pt x 156.585pt>
+<./images/izbor4_apriori.PNG, id=188, 563.10374pt x 156.585pt>
 File: ./images/izbor4_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor4_apriori.PNG>
 Package pdftex.def Info: ./images/izbor4_apriori.PNG used on input line 584.
 (pdftex.def)             Requested size: 345.00502pt x 89.69878pt.
 
-<./images/izbor5_apriori.PNG, id=184, 553.31718pt x 432.11438pt>
+<./images/izbor5_apriori.PNG, id=189, 553.31718pt x 432.11438pt>
 File: ./images/izbor5_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor5_apriori.PNG>
 Package pdftex.def Info: ./images/izbor5_apriori.PNG used on input line 598.
-(pdftex.def)             Requested size: 275.99936pt x 179.40324pt.
+(pdftex.def)             Requested size: 344.99498pt x 179.40324pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/izbor5_carma.PNG, id=185, 527.72156pt x 456.95718pt>
+<./images/izbor5_carma.PNG, id=190, 527.72156pt x 456.95718pt>
 File: ./images/izbor5_carma.PNG Graphic file (type png)
 
 <use ./images/izbor5_carma.PNG>
 Package pdftex.def Info: ./images/izbor5_carma.PNG used on input line 606.
-(pdftex.def)             Requested size: 275.99506pt x 179.39792pt.
+(pdftex.def)             Requested size: 344.99583pt x 179.39792pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18 <./images/izbor3_carma.PNG> <./images/izbor4_apriori.PNG>] [19 <./images/iz
+[19 <./images/izbor3_carma.PNG> <./images/izbor4_apriori.PNG>] [20 <./images/iz
 bor5_apriori.PNG> <./images/izbor5_carma.PNG>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -891,7 +904,7 @@ cavanje nekih kra-jnje neo^^Tcekivanih
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 623.
-[20
+[21
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 623.
@@ -903,8 +916,8 @@ Package rerunfilecheck Info: File `rad.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 623.
  ) 
 Here is how much of TeX's memory you used:
- 5607 strings out of 493867
- 83078 string characters out of 6157397
+ 5608 strings out of 493867
+ 83085 string characters out of 6157397
  166211 words of memory out of 5000000
  8823 multiletter control sequences out of 15000+600000
  8937 words of font info for 32 fonts, out of 8000000 for 9000
@@ -920,10 +933,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb>
-Output written on rad.pdf (20 pages, 1092716 bytes).
+Output written on rad.pdf (21 pages, 1097835 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 54 named destinations out of 1000 (max. 500000)
  190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
