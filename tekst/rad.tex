@@ -375,7 +375,7 @@ puta, pa ćemo i njih ukloniti.
 Skup podataka \texttt{holidays} smo odlučili da ne koristimo za dalju analizu, jer ne sadrži preterano korisne informacije.
 
 \section{Pravila pridruživanja}
-Nakon što smo obradili skupove podataka, hteli smo da na svaki od relevantnih skupova primenimo algoritme \textit{Apriori} i \textit{Carma},
+Nakon što smo obradili skupove podataka, hteli smo da na neke od relevantnih skupova primenimo algoritme \textit{Apriori} i \textit{Carma},
 u nadi da ćemo uočiti neka zanimljiva pravila. Nakon primene pomenutih algoritama, cilj nam je bio da primenimo iste algoritme nad objedinjenim podacima.
 
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{characteristics}}
@@ -476,6 +476,23 @@ u opsegu od 0.673 do 1.421, ali sa malom pouzdanošću i podrškom. Rezultati se
 % 	
 
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{places}}
+
+Nakon pomenutih koraka u preprocesiranju podataka ovog skupa, pokušali smo da primenimo apriori i carma algoritme kako bismo otkrili
+neke zanimljivosti, ali rezultati nisu bili preterano obećavajući. Naime, samo je carma čvor izdvojio pravila, ali ni ona nam nisu
+koristila za rezonovanje o skupu. 
+
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.2\textheight]{./images/places_type_cvor.PNG}}
+ \caption{Type čvor skupa \textit{places}}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.5\textheight]{./images/places_carma.PNG}}
+ \caption{Rezultat algoritma carma za skup \textit{places}}
+\end{figure}
 
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad objedinjenim podacima}
 

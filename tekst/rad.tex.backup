@@ -375,7 +375,7 @@ puta, pa ćemo i njih ukloniti.
 Skup podataka \texttt{holidays} smo odlučili da ne koristimo za dalju analizu, jer ne sadrži preterano korisne informacije.
 
 \section{Pravila pridruživanja}
-Nakon što smo obradili skupove podataka, hteli smo da na svaki od relevantnih skupova primenimo algoritme \textit{Apriori} i \textit{Carma},
+Nakon što smo obradili skupove podataka, hteli smo da na neke od relevantnih skupova primenimo algoritme \textit{Apriori} i \textit{Carma},
 u nadi da ćemo uočiti neka zanimljiva pravila. Nakon primene pomenutih algoritama, cilj nam je bio da primenimo iste algoritme nad objedinjenim podacima.
 
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{characteristics}}
@@ -477,6 +477,26 @@ u opsegu od 0.673 do 1.421, ali sa malom pouzdanošću i podrškom. Rezultati se
 
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{places}}
 
+
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.2\textheight]{./images/places_data_audit_part_1.PNG}}
+ \caption{Rezultat data audit čvora za skup \textit{places}, prvi deo. }
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.2\textheight]{./images/places_data_audit_part_2.PNG}}
+ \caption{Rezultat data audit čvora za skup \textit{places}, drugi deo. }
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.2\textheight]{./images/places_type_cvor.PNG}}
+ \caption{Type čvor skupa \textit{places}}
+\end{figure}
+
 \subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad objedinjenim podacima}
 
 Uz pomoć čvora \textit{Merge} smo spojili skupove \textit{users}, \textit{vehicles} i \textit{caracteristics} izbacujući 
@@ -575,6 +595,23 @@ bliska jedinici).
 Poslednji pokušaj ticao se traženja povezanosti izmedju ozbiljnosti povrede, izgleda puta na mapi, pozicije nesreće i zaštitne opreme. 
 Apriori algoritam je korišćen sa parametrima 5.0\% i 40.0\% za minimalnu podršku i minimalnu pouzdanost, redom. Carma čvor smo koristili
 sa podrazumevanim parametrima. 
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=0.8\textwidth,height=0.3\textheight]{./images/izbor5_apriori.PNG}}
+ \caption{Rezultati apriori algoritma primenjenog na ozbiljnost povrede, izgled puta na mapi, poziciju nesreće i zaštitnu opremu. 
+ Najveći deo pravila kao posledicu ima korišćenje zaštitnog pojasa što je i očekivano s obzirom na broj slogova u kome se pojas 
+ javlja, ali smatramo da ovo pravilo ne pruža nikakav značajan zaključak.}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=0.8\textwidth,height=0.3\textheight]{./images/izbor5_carma.PNG}}
+ \caption{Rezultati carma algoritma primenjenog na ozbiljnost povrede, izgled puta na mapi, poziciju nesreće i zaštitnu opremu. 
+ Dobijena pravila imaju dobru lift meru i logična su. Na primer, korišćenje pojasa na pravom putu povezana je sa odsustvom povreda.  }
+\end{figure}
+
+\clearpage
 
 \section{Zaključak}
 

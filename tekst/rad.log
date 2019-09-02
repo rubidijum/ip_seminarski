@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.4.1)  2 SEP 2019 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.4.1)  2 SEP 2019 20:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -738,156 +738,175 @@ File: ./images/stream1_model.PNG Graphic file (type png)
 Package pdftex.def Info: ./images/stream1_model.PNG used on input line 471.
 (pdftex.def)             Requested size: 448.50192pt x 239.19653pt.
 
-Overfull \hbox (12.96454pt too wide) in paragraph at lines 482--486
+<./images/places_type_cvor.PNG, id=135, 423.83344pt x 188.20313pt>
+File: ./images/places_type_cvor.PNG Graphic file (type png)
+
+<use ./images/places_type_cvor.PNG>
+Package pdftex.def Info: ./images/places_type_cvor.PNG used on input line 487.
+(pdftex.def)             Requested size: 345.01051pt x 119.60242pt.
+
+<./images/places_carma.PNG, id=136, 523.20468pt x 440.39531pt>
+File: ./images/places_carma.PNG Graphic file (type png)
+
+<use ./images/places_carma.PNG>
+Package pdftex.def Info: ./images/places_carma.PNG used on input line 493.
+(pdftex.def)             Requested size: 345.00479pt x 299.00789pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (12.96454pt too wide) in paragraph at lines 499--503
 \OT1/cmr/m/n/10 Uz pomo^^Sc ^^Tcvora \OT1/cmr/m/it/10 Merge \OT1/cmr/m/n/10 smo
  spo-jili skupove \OT1/cmr/m/it/10 users\OT1/cmr/m/n/10 , \OT1/cmr/m/it/10 ve-h
 i-cles \OT1/cmr/m/n/10 i \OT1/cmr/m/it/10 car-ac-ter-is-tics \OT1/cmr/m/n/10 iz
 bacuju^^Sci
  []
 
-<./images/default_apriori.PNG, id=135, 423.08063pt x 459.21562pt>
+[13
+
+ <./images/stream1_model.PNG> <./images/places_type_cvor.PNG>]
+<./images/default_apriori.PNG, id=146, 423.08063pt x 459.21562pt>
 File: ./images/default_apriori.PNG Graphic file (type png)
 
 <use ./images/default_apriori.PNG>
-Package pdftex.def Info: ./images/default_apriori.PNG used on input line 489.
+Package pdftex.def Info: ./images/default_apriori.PNG used on input line 506.
 (pdftex.def)             Requested size: 345.01102pt x 179.40167pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/default_carma.PNG, id=136, 504.38437pt x 465.23813pt>
+<./images/default_carma.PNG, id=147, 504.38437pt x 465.23813pt>
 File: ./images/default_carma.PNG Graphic file (type png)
 
 <use ./images/default_carma.PNG>
-Package pdftex.def Info: ./images/default_carma.PNG used on input line 495.
+Package pdftex.def Info: ./images/default_carma.PNG used on input line 512.
 (pdftex.def)             Requested size: 345.00095pt x 179.39763pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13
-
- <./images/stream1_model.PNG>] [14 <./images/default_apriori.PNG> <./images/def
-ault_carma.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 501--506
+[14 <./images/places_carma.PNG>] [15 <./images/default_apriori.PNG> <./images/d
+efault_carma.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 518--523
 
  []
 
 
-Overfull \hbox (0.9451pt too wide) in paragraph at lines 507--511
+Overfull \hbox (0.9451pt too wide) in paragraph at lines 524--528
 \OT1/cmr/m/n/10 vrste su-dara, kat-e-gorija u^^Tcesnika, oz-biljnosti povreda i
  kori^^Ts^^Scene za^^Tstitne opreme.
  []
 
-<./images/jovanov_izbor_apriori.PNG, id=152, 605.26125pt x 469.00218pt>
+<./images/jovanov_izbor_apriori.PNG, id=162, 605.26125pt x 469.00218pt>
 File: ./images/jovanov_izbor_apriori.PNG Graphic file (type png)
 
 <use ./images/jovanov_izbor_apriori.PNG>
 Package pdftex.def Info: ./images/jovanov_izbor_apriori.PNG used on input line 
-514.
+531.
 (pdftex.def)             Requested size: 448.50508pt x 239.1951pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--525
+Underfull \hbox (badness 10000) in paragraph at lines 536--542
 
  []
 
-<./images/jovanov_izbor_carma.PNG, id=153, 471.26062pt x 168.63pt>
+<./images/jovanov_izbor_carma.PNG, id=163, 471.26062pt x 168.63pt>
 File: ./images/jovanov_izbor_carma.PNG Graphic file (type png)
 
 <use ./images/jovanov_izbor_carma.PNG>
-Package pdftex.def Info: ./images/jovanov_izbor_carma.PNG used on input line 52
-8.
+Package pdftex.def Info: ./images/jovanov_izbor_carma.PNG used on input line 54
+5.
 (pdftex.def)             Requested size: 345.00255pt x 89.69768pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15
+[16
 
  <./images/jovanov_izbor_apriori.PNG>]
-<./images/izbor2_carma.PNG, id=160, 484.05844pt x 160.34906pt>
+<./images/izbor2_carma.PNG, id=170, 484.05844pt x 160.34906pt>
 File: ./images/izbor2_carma.PNG Graphic file (type png)
 
 <use ./images/izbor2_carma.PNG>
-Package pdftex.def Info: ./images/izbor2_carma.PNG used on input line 539.
+Package pdftex.def Info: ./images/izbor2_carma.PNG used on input line 556.
 (pdftex.def)             Requested size: 345.0134pt x 89.69698pt.
 
-<./images/izbor3_apriori.PNG, id=161, 472.76625pt x 120.45pt>
+<./images/izbor3_apriori.PNG, id=171, 472.76625pt x 120.45pt>
 File: ./images/izbor3_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor3_apriori.PNG>
-Package pdftex.def Info: ./images/izbor3_apriori.PNG used on input line 549.
+Package pdftex.def Info: ./images/izbor3_apriori.PNG used on input line 566.
 (pdftex.def)             Requested size: 345.00829pt x 89.69951pt.
 
-<./images/izbor3_carma.PNG, id=162, 449.42906pt x 146.79843pt>
+<./images/izbor3_carma.PNG, id=172, 449.42906pt x 146.79843pt>
 File: ./images/izbor3_carma.PNG Graphic file (type png)
 
 <use ./images/izbor3_carma.PNG>
-Package pdftex.def Info: ./images/izbor3_carma.PNG used on input line 556.
+Package pdftex.def Info: ./images/izbor3_carma.PNG used on input line 573.
 (pdftex.def)             Requested size: 345.0122pt x 89.69698pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16 <./images/jovanov_izbor_carma.PNG> <./images/izbor2_carma.PNG> <./images/iz
+[17 <./images/jovanov_izbor_carma.PNG> <./images/izbor2_carma.PNG> <./images/iz
 bor3_apriori.PNG>]
-<./images/izbor4_apriori.PNG, id=173, 563.10374pt x 156.585pt>
+<./images/izbor4_apriori.PNG, id=183, 563.10374pt x 156.585pt>
 File: ./images/izbor4_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor4_apriori.PNG>
-Package pdftex.def Info: ./images/izbor4_apriori.PNG used on input line 567.
+Package pdftex.def Info: ./images/izbor4_apriori.PNG used on input line 584.
 (pdftex.def)             Requested size: 345.00502pt x 89.69878pt.
 
-<./images/izbor5_apriori.PNG, id=174, 553.31718pt x 432.11438pt>
+<./images/izbor5_apriori.PNG, id=184, 553.31718pt x 432.11438pt>
 File: ./images/izbor5_apriori.PNG Graphic file (type png)
 
 <use ./images/izbor5_apriori.PNG>
-Package pdftex.def Info: ./images/izbor5_apriori.PNG used on input line 581.
+Package pdftex.def Info: ./images/izbor5_apriori.PNG used on input line 598.
 (pdftex.def)             Requested size: 275.99936pt x 179.40324pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/izbor5_carma.PNG, id=175, 527.72156pt x 456.95718pt>
+<./images/izbor5_carma.PNG, id=185, 527.72156pt x 456.95718pt>
 File: ./images/izbor5_carma.PNG Graphic file (type png)
 
 <use ./images/izbor5_carma.PNG>
-Package pdftex.def Info: ./images/izbor5_carma.PNG used on input line 589.
+Package pdftex.def Info: ./images/izbor5_carma.PNG used on input line 606.
 (pdftex.def)             Requested size: 275.99506pt x 179.39792pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17 <./images/izbor3_carma.PNG> <./images/izbor4_apriori.PNG>] [18 <./images/iz
+[18 <./images/izbor3_carma.PNG> <./images/izbor4_apriori.PNG>] [19 <./images/iz
 bor5_apriori.PNG> <./images/izbor5_carma.PNG>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 596.
+(hyperref)                removing `\textasciicaron' on input line 613.
 
 
-Overfull \hbox (28.38972pt too wide) in paragraph at lines 598--605
+Overfull \hbox (28.38972pt too wide) in paragraph at lines 615--622
 \OT1/cmr/m/n/10 Pravila pridru^^Tzivanja pred-stavl-jaju mo^^Scan alat za uo^^T
 cavanje nekih kra-jnje neo^^Tcekivanih
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 606.
-[19
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 623.
+[20
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 606.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 623.
  (./rad.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 606.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 606.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 623.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 623.
 Package rerunfilecheck Info: File `rad.out' has not changed.
 (rerunfilecheck)             Checksum: 86C2B715BE2371DB33ACC3AF5A255E40;580.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 606.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 623.
  ) 
 Here is how much of TeX's memory you used:
- 5594 strings out of 493867
- 82763 string characters out of 6157397
+ 5607 strings out of 493867
+ 83078 string characters out of 6157397
  166211 words of memory out of 5000000
- 8815 multiletter control sequences out of 15000+600000
+ 8823 multiletter control sequences out of 15000+600000
  8937 words of font info for 32 fonts, out of 8000000 for 9000
  766 hyphenation exceptions out of 8191
  29i,7n,31p,547b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -901,10 +920,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt12.pfb>
-Output written on rad.pdf (19 pages, 1024934 bytes).
+Output written on rad.pdf (20 pages, 1092716 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
