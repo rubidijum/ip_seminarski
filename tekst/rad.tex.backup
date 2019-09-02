@@ -335,19 +335,19 @@ ali dodatnim posmatranjem smo primetili da je format zapisa tih podataka dosta n
 pošto bez iscrpnog analiziranja teksta ne bismo mogli da izvučemo korisne informacije, što je dovelo do odluke da preko čvora \textit{Type} 
 tim atributima postavimo ulogu (``Role'') na vrednost \texttt{None}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
  \centering
- \makebox[\textwidth][c]{\includegraphics[width=1.4\textwidth,height=0.3\textheight]{./images/ip_sem_img_1.png}}
+ \makebox[\textwidth][c]{\includegraphics[width=1.4\textwidth,height=0.25\textheight]{./images/ip_sem_img_1.png}}
  \caption{Sadržaj \textit{Data Audit} čvora za tabelu \texttt{characteristics}}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
  \centering
  \makebox[\textwidth][c]{\includegraphics[width=0.55\textwidth]{./images/ip_sem_img_2.png}}
  \caption{Sadržaj \textit{Filter} čvora za tabelu \texttt{characteristics}}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
  \centering
  \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.5\textheight]{./images/ip_sem_img_3.png}}
  \caption{Sadržaj \textit{Type} čvora za tabelu \texttt{characteristics}}
@@ -360,10 +360,17 @@ tako da smo te nekonzistentne vrednosti preimenovali u \texttt{NA} (neodredjenu 
 šta ta vrednost predstavlja, 0 je zamenjena sa \texttt{NA}. Za atribut \textit{place} smo sve vrednosti ostavili kakve jesu, pošto je šema 
 koja predstavlja kodiranje bila nedovoljno jasna.
 
-Skup podataka \texttt{vehicles} smo analizirali i zaključili da sve nedostajuće i neodredjene vrednosti možemo da odbacimo. Nismo naišli ni na kakve
-nepravilnosti koje iziskuju podrobnije procesiranje.
+Skup podataka \texttt{vehicles} smo analizirali i zaključili da sve slogove koji sadrže nedostajuće i neodredjene 
+vrednosti možemo da odbacimo. Nismo naišli ni na kakve nepravilnosti koje iziskuju podrobnije procesiranje.
 
-Skup podataka \texttt{places}
+Nakon što smo uvideli da kolone \texttt{v1} i \texttt{v2} skupa \texttt{places} sadrže ogroman broj nedostajućih
+vrednosti, odbacili smo ih. Pošto se u kolonama \texttt{pr} i \texttt{pr1} javlja preko 50\% nedostajućih vrednosti, a smatramo da ne postoji
+smislen način da te vrednosti popunimo, odbacili smo i ove kolone. Kolona \texttt{env1} predstavlja predstavlja meru blizine
+školi, ali je zbog nejasnog kodiranja i ova kolona odbačena. Iako kolone \texttt{voie}, \texttt{vosp}, \texttt{lartpc}, \texttt{infra}
+i \texttt{nbv} nemaju puno nedostajućih vrednosti, gotovo svi slogovi uzimaju mali skup vrednosti za pomenute atribute pa smo 
+se odlučili da ni ove atribute ne koristimo u daljoj analizi. Za kolone \texttt{situ}, \texttt{prof}, \texttt{surf} i \texttt{plan}
+ćemo odbaciti slogove sa vrednošću nula za ove atribute. U koloni \texttt{larrout} se javljaju negativne vrednosti za širinu
+puta, pa ćemo i njih ukloniti.
 
 Skup podataka \texttt{holidays} smo odlučili da ne koristimo za dalju analizu, jer ne sadrži preterano korisne informacije.
 
@@ -379,20 +386,103 @@ tog algoritma se mogu videti na slici. Posledice pravila se odnose na atmosfersk
 Algoritam je uspeo da nadje 30 pravila, koja sve u svemu nisu zanimljiva. Naime, lift mera se kreće u opsegu od 0.998 do 1.314, što nam govori da su
 uzročnici u blagoj korelaciji sa posledicama. Kako bismo pripremili skup podataka za algoritam \textit{Carma}, koristili smo čvor \textit{SetToFlag}. 
 \textit{Carma} algoritam smo primenili sa istim parametrima kao i \textit{Apriori}. Dobili smo 22 pravila, koja su gotovo identična onima koje smo
-dobili korišćenjem \textit{Apriori} algoritma. 
+dobili korišćenjem \textit{Apriori} algoritma. \\
 % TODO: slika Apriori(5) i Carma(6)
  
 Kao što se iz rezultata \textit{Data Audit} čvora može primetiti, odredjene vrednosti nekh atributa dominiraju nad ostalim vrednostima, te stoga ne
-čudi što otkrivena pravila sadrže te vrednosti. U želji da izbor pravila bude pravedniji, odlučili smo da izbalansiramo skup podataka, tako što 
-ćemo korišćenjem čvorova \textit{Balance} na pojedinačne kolone ublažiti efekat dominantnih vrednosti. Nakon toga smo redom primenjivali \textit{Apriori}
-algoritam za svaku izmenjenu kolonu. Potom smo eksperimentisali sa primenom \textit{Apriori} alogritma na ulančane \textit{Balance} čvorove i na 
-čvorove primenjene na pojedinačne kolone. Neki od rezultata su predstavljeni na narednim slikama.
+čudi što otkrivena pravila sadrže te vrednosti. 
 %TODO: slika 7+
 
+\begin{figure}[!h]
+ \centering
+ \label{fig:data_audit}
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.3\textheight]{./images/stream1_data_audit_hist.PNG}}
+ \caption{Možemo videti da se u kolonama \textit{osvetljenje}, \textit{tip\_raskrsnice} i \textit{atmosferske\_prilike} u 
+ najvećem broju slučajeva javlja samo jedna vrednost, te ćemo te vrednosti pokušati da izbalansiramo. Još jedna kolona na koju ćemo 
+ primeniti balansiranje je \textit{vrsta\_sudara}.}
+\end{figure}
+
+U želji da izbor pravila bude pravedniji, odlučili smo da izbalansiramo skup podataka, tako što 
+ćemo korišćenjem čvorova \textit{Balance} na pojedinačne kolone ublažiti efekat dominantnih vrednosti (pomenute čvorove
+smo generisali uz pomoć distribucija odgovarajućih kolona). Nakon toga smo redom primenjivali \textit{Apriori}
+algoritam za svaku izmenjenu kolonu. Potom smo eksperimentisali sa primenom \textit{Apriori} alogritma na ulančane \textit{Balance} čvorove. 
+Neki od rezultata su predstavljeni na narednim slikama.
+
+\begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.2\textheight]{./images/stream1_apriori_bal_osvetljenje.PNG}}
+ \caption{Rezultat primene apriori algoritma na balansiranu kolonu \textit{osvetljenje}. Izdvojena pravila jesu logična, ali nam 
+ ne otkrivaju puno interesantnih zaključaka.}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/stream1_apriori_red_sudar.PNG}}
+ \caption{Rezultat primene apriori algoritma na balansiranu kolonu \textit{vrsta\_sudara}. U ovom slučaju je pronadjeno 33 pravila
+  od kojih su ona sa najvećom lift merom logična ali i dalje nam ne daju upotrebljiviji uvid u zavisnosti medju atributima. }
+\end{figure}
+
+\clearpage
+Zaključujemo da balansiranje pojedinačnih kolona ne dovodi do željenih rezultata te smo probali sa ulančanim balansiranjem.
+
+\begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.1\textheight]{./images/stream1_apriori_bal_osvetljenje_SEQ.PNG}}
+ \caption{Rezultat primene apriori algoritma na redom izbalansirane sve kolone skupa. Izdvojeno pravilo prema lift meri jeste
+ zanimljivo ali je opet očekivano da u gradskoj sredini postoji osvetljenje koje je uključeno. }
+\end{figure}
+
+%stream1_apriori_reduce_atm_SEQ.PNG
+\begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1\textwidth,height=0.1\textheight]{./images/stream1_apriori_reduce_atm_SEQ.PNG}}
+ \caption{Rezultat primene apriori algoritma na balansirane kolone \textit{tip\_raskrsnice}, \textit{vrsta\_sudara} 
+ i \textit{atmosferske\_prilike}. }
+\end{figure}
+
+
 Kako pokušaj sa balansiranjem nije prošao slavno, odlučili smo se da potpuno eliminišemo slogove koji imaju najzastupljeniju vrednost odredjenog atributa,
-i da na njega primenimo iste algoritme. Na ovaj način smo otkrili više pravila nego u prethodnim pokušajima, sa interesantnijim lift merama 
-u opsegu od 0.673 do 1.421, ali sa malom pouzdanošću i podrškom. Neki rezultati mogu da se vide na sledećim slikama.
-%TODO: slike!
+i da na njega primenimo iste algoritme. Na ovaj način smo otkrili više pravila nego u prethodnim pokušajima, sa lift merama 
+u opsegu od 0.673 do 1.421, ali sa malom pouzdanošću i podrškom. Rezultati se mogu videti na slici.
+
+\begin{figure}[!h]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth,height=0.3\textheight]{./images/stream1_apriori_vrsta_sudara.PNG}}
+ \caption{Nakon izbacivanja slogova koji bi `prigušili` ostatak skupa, dobijeni su ovakvi rezultati. I dalje smatramo da ne 
+ postoje izuzetno zanimljiva pravila. }
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/stream1_model.PNG}}
+ \caption{Prikaz celokupnog streama obrade skupa \textit{caracteristics.csv} }
+\end{figure}
+
+%TODO: 	broj putnika: nesto slogirano, brisemo
+% 	
+
+\subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad skupom \texttt{places}}
+
+\subsection{Primena \textit{Apriori} i \textit{Carma} algoritama nad objedinjenim podacima}
+
+Uz pomoć čvora \textit{Merge} smo spojili skupove \textit{users}, \textit{vehicles} i \textit{caracteristics} izbacujući 
+redove sa nedostajućim vrednostima usput. Nakon toga smo izbacili kolone ... Izvršili smo dodatno uklanjanje besmislenih slogova
+i tako pripremljene podatke propustili kroz \textit{Apriori} i \textit{Carma} čvorove. U prvoj iteraciji smo koristili
+podrazumevane parametre za oba čvora. Rezultati su u nastavku.
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/default_apriori.PNG}}
+ \caption{Rezultati apriori algoritma sa podrazumevanim parametrima.}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+ \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth,height=0.4\textheight]{./images/default_carma.PNG}}
+ \caption{Rezultati carma algoritma sa podrazumevanim parametrima.}
+\end{figure}
 
 
 
